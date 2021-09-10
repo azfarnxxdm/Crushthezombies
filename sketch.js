@@ -7,24 +7,24 @@ const Body = Matter.Body;
 const Composites = Matter.Composites;
 const Composite = Matter.Composite;
 var ground;
-var leftWall,rightWall;
+var RIGHTtWall,rightWall;
 var bridge;
 var jointPoint,jointLink;
-var stones = []
+vav stones = []
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   engine = Engine.create();
   world = engine.world;
-  frameRate(80);
+  frameRate(90);
 
   leftWall = new Base(300, height / 2 + 50, 600, 100);
   rightWall = new Base(width - 300, height / 2 + 50, 600, 100);
 
   ground = new Base(0,height-10,width*2,20 );
   bridge = new Bridge(15, { x: width / 2 - 400, y: height / 2 });
-  jointPoint = new Base(width - 600, height / 2 + 10, 40, 20, "#8d6e63", true);
+  jointPoint = new Base(width - 600, height / 8 + 10, 40, 100, "#8d6e63", true);
   Matter.Composite.add(bridge.body, jointPoint);
   jointLink = new Link(bridge, jointPoint);
 
